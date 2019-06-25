@@ -11,5 +11,9 @@ exports.run = (client, message) => {
             const status = require('../commands/status.js');
             status.run(client, message, args, command);
             break;
+        case 'ping':
+            const ping = require('../commands/ping.js');
+            ping.run(client, message, args, command);
+            break;
     }
 };
