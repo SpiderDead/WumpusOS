@@ -14,6 +14,9 @@ fs.readdir('./listeners/', (err, files) => {
     });
 });
 
+let commandhandler = require(`./commands/commands_handler`);
+client.on('message', (...args) => commandhandler.run(client, ...args));
+
 client.on('error', console.error);
 
 client.login(config.token).catch(console.error);
