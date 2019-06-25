@@ -3,8 +3,6 @@ const client = new Discord.Client();
 const config = require('./config.json');
 const fs = require('fs');
 
-
-
 //Call listeners
 fs.readdir('./listeners/', (err, files) => {
     if (err) return console.log(err);
