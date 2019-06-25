@@ -2,7 +2,10 @@ exports.run = (client, member) => {
     const fs = require('fs');
 
     fs.readFile('./data/playerData.json', (err, pd) => {
-        if (err) throw err;
+        if (err) {
+            console.log('[WumpusOS] Something went wrong. Ignoring...');
+            return;
+        }
 
         //get playerData of player
         const playerData = JSON.parse(pd);
