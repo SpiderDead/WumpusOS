@@ -23,7 +23,7 @@ exports.run = (client, member) => {
             fs.writeFile("./data/playerData.json", JSON.stringify(playerData), (err) => {
                 if (err) throw err;
             });
-            console.log('[WumpusOS] system got removed! He was not the one...');
+            console.log('[WumpusOS] system ' + player.gameid + ' got removed! It was not the one...');
         }else{
             console.log('[WumpusOS] That is strange... I could not find the system in the playerData. Ignoring...');
         }
