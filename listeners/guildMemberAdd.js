@@ -1,5 +1,6 @@
 exports.run = (client, member) => {
     const fs = require('fs');
+    const config = require('../config.json');
 
     const randomIP = require('../utils/IP.js').generateIP();
     const randomIPdashed = randomIP.replace(/[.]/g, '_');
@@ -16,7 +17,7 @@ exports.run = (client, member) => {
     member.setNickname(randomIP).catch(console.error);
     member.guild.createChannel(randomIPdashed, { type: 'text'})
         .then(c => {
-            c.setParent('592793688971935755').catch(console.error);
+            c.setParent(config.node_category).catch(console.error);
             c.replacePermissionOverwrites({ overwrites: [
                     {
                         id: member.guild.id,
