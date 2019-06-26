@@ -33,7 +33,7 @@ exports.run = (client, member) => {
                 if (err) throw err;
                 const playerData = JSON.parse(pd);
 
-                playerData.push({"userid": member.id, "gameid": randomIP, "channelid": c.id});
+                playerData.push({"userid": member.id, "gameid": randomIP, "channelid": c.id, "currency": 500});
 
                 fs.writeFile("./data/playerData.json", JSON.stringify(playerData), (err) => {
                     if (err) throw err;
