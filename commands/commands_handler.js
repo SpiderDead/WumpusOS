@@ -11,5 +11,13 @@ exports.run = (client, message) => {
             const ping = require('../commands/ping.js');
             ping.run(client, message, args, command);
             break;
+        case 'connect':
+            const connect = require('../commands/connect.js');
+            connect.run(client, message, args, command);
+            break;
+        case 'disconnect':
+            const disconnect = require('../commands/disconnect.js');
+            disconnect.run(client, message, args, command);
+            break;
     }
 };
