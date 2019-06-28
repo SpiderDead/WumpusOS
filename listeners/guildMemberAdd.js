@@ -14,7 +14,6 @@ exports.run = (client, member) => {
 
     }
 
-    member.setNickname(randomIP).catch(console.error);
     member.guild.createChannel(randomIPdashed, { type: 'text'})
         .then(c => {
             c.setParent(config.node_category).catch(console.error);
