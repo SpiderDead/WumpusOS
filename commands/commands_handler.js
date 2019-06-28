@@ -19,5 +19,9 @@ exports.run = (client, message) => {
             const disconnect = require('../commands/disconnect.js');
             disconnect.run(client, message, args, command);
             break;
+        case 'leaderboard':
+            const leaderboard = require('../commands/leaderboard.js');
+            leaderboard.run(client, message, args, command);
+            break;
     }
 };
